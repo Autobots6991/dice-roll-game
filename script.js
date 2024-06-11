@@ -5,7 +5,6 @@ let holdScore = 0
 const newGame = () => {
     currentScore = 0
     holdScore = 0
-    $(".score").text(0)
     $(".current-score").text(currentScore)
     $(".player").removeClass("player--active player--winner")
     $(".player--0").addClass("player--active")
