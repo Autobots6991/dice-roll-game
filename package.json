@@ -10,7 +10,7 @@
     "uuid": "^10.0.0"
   },
   "name": "dice-roll-game",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Dice Roll Game",
   "main": "server.js",
   "devDependencies": {},
