@@ -1,23 +1,23 @@
 'use strict';
-//Selecting Element
-const score0 = $("#score--0").text()
-const score1 = $("#score--1").text()
-const diceEl = $(".dice")
 let currentScore = 0
-
+let holdScore = 0
 //Functions
 const newGame = () => {
     currentScore = 0
+    holdScore = 0
     $(".score").text(0)
     $(".current-score").text(currentScore)
+    $(".player--active").toggleClass("player--winner")
     $(".dice").hide()
 }
 const switchPlayer = () => {
     $(".player").toggleClass("player--active")
 }
 const hold = () => {
-    $(".player--active .score").text(currentScore)/10
-    switchPlayer()
+    holdScore = Number($(".player--active .score").text())
+    holdScore += currentScore
+    $(".player--active .score").text(holdScore)/10
+    holdScore >= 20 ? $(".player--active").toggleClass("player--winner") : switchPlayer()
     currentScore = 0
 }
 const rollDice = () => {
@@ -38,6 +38,7 @@ const rollDice = () => {
                 }
 }
 
+//Event Handling
 $(document).ready(function(){
     //New game
     $(".btn--new").click(newGame)
