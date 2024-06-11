@@ -1,7 +1,23 @@
 {
   "dependencies": {
+    "cookie-session": "^2.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "fs": "^0.0.1-security",
     "heroku": "^8.1.9",
     "jquery": "^3.7.1",
-    "node": "^20.14.0"
-  }
+    "node": "^20.14.0",
+    "uuid": "^10.0.0"
+  },
+  "name": "dice-roll-game",
+  "version": "1.0.0",
+  "description": "Dice Roll Game",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC"
 }
