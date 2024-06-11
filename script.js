@@ -7,7 +7,8 @@ const newGame = () => {
     holdScore = 0
     $(".score").text(0)
     $(".current-score").text(currentScore)
-    $(".player--active").toggleClass("player--winner")
+    $(".player").removeClass("player--active player--winner")
+    $(".player--0").addClass("player--active")
     $(".dice").hide()
 }
 const switchPlayer = () => {
@@ -17,7 +18,7 @@ const hold = () => {
     holdScore = Number($(".player--active .score").text())
     holdScore += currentScore
     $(".player--active .score").text(holdScore)/10
-    holdScore >= 20 ? $(".player--active").toggleClass("player--winner") : switchPlayer()
+    holdScore >= 100 ? $(".player--active").addClass("player--winner") : switchPlayer()
     currentScore = 0
 }
 const rollDice = () => {
